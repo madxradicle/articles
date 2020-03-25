@@ -38,8 +38,8 @@
 <table>
   <tr><th>未加INDEX</th><th>已加INDEX</th><th>备注</th></tr>
   <tr>
-    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan'<br/>(0.0019 seconds)</td>
-    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan'<br/>(0.0019 seconds)</td>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan'<br/>(0.0019s)</td>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan'<br/>(0.0019s)</td>
     <td>呃，show off失败，似乎没有什么改变（祈祷）。</td>
   </tr>
   <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee'<br/>(1.7565s)</td>
