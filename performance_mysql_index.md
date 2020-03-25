@@ -44,7 +44,11 @@ SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.00
   <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' and phone_number='4568061964' (6.3696s)</td>
     <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' and phone_number='4568061964' (0.0011s)</td>
     <td>看到了吧！！速度大幅度提升了！！</td></tr>
-  
-  
-  
 </table>
+
+好，这里讲到设计index,首先重复data最少的column排在第一位,重复最多的排在最后一位。请参考图2。
+<p align="center">
+    <img src="https://github.madxradicle.com/mysql_index/figure2_1.png"/><img src="https://github.madxradicle.com/mysql_index/figure2_2.png"/><br/>
+    图2. 用phpmyadmin新建一个combination index。别为各个column加index,没效果。
+</p>    
+
