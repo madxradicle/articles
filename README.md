@@ -17,6 +17,6 @@
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-* [Duplicate Insert](#duplicate-insert)
+* [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
 * [Framework](#framework)
 * [Contributing](#contributing)
