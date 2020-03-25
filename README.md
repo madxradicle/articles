@@ -9,7 +9,6 @@
     <br />
     <a href="https://github.com/madxradicle/articles"><strong>Explore the docs »</strong></a>
     <br />
-    ·
     <a href="https://github.com/madxradicle/articles/issues">Report Bug</a>
     ·
     <a href="https://github.com/madxradicle/articles/issues">Request Feature</a>
