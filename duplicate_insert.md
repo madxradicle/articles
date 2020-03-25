@@ -28,9 +28,9 @@
 上文SYSTEM_LAG提到duplicate inserts。明明你的php script只是执行一次insert, 结果table里却多过一条records, records的datetime column显示同一秒，也有多几秒可是少见。这造成公司蒙受严重损失。
 
 * [原因](#原因)
-* [解决方法1 单一process处理事务](#解决方法1 单一process处理事务)
-* [解决方法2 使用explicit lock at table-level](#解决方法2 使用explicit lock at table-level)
-* [解决方法3 使用INSERT NOT EXIST](#解决方法3 使用INSERT NOT EXIST)
+* [解决方法1 - 单一process处理事务](#解决方法1-单一process处理事务)
+* [解决方法2 - 使用explicit lock at table-level](#解决方法2-使用explicit lock at table-level)
+* [解决方法3 - 使用INSERT NOT EXIST](#解决方法3-使用INSERT NOT EXIST)
 * [如何避免duplicate of multi insert?](#如何避免duplicate of multi insert?)
 * [注意事项](#注意事项)
 
