@@ -3,7 +3,7 @@
   <a href="https://github.com/madxradicle/madxframework2.0">
     <img src="https://www.randomsystem.net/media/images/github/MR_logo.png" alt="Logo" width="200px" height="100px">
   </a>
-  <h3 align="center">MadxFramework 2.0</h3>
+  <h3 align="center">Technical Articles</h3>
   <p align="center">
    These articles are initially written in chinese and moved from google documents.
     <br />
