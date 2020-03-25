@@ -139,6 +139,10 @@ $sql = "INSERT INTO `sometable` (some_type, some_id) SELECT 'add_product','{$get
 缺点: insert sql的可读性差，一个insert需要两次select的开销。
 
 ## 如何避免duplicate of multi insert?
+<p align="center">
+    <img src="https://github.madxradicle.com/duplicate_insert/figure3.png"/><br/>
+    图3. Structure of multi insert sql
+</p>    
 
 ## 注意事项
 Unique是强大的，可是如果script是执行多个insert在不同的table,那么这些table通通都必须有unique的保护。举例错误示范。
