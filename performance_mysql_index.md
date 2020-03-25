@@ -38,16 +38,16 @@
 <table>
   <tr><th>未加INDEX</th><th>已加INDEX</th><th>备注</th></tr>
   <tr>
-    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' (0.0019 seconds)</td>
-    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' (0.0019 seconds)</td>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan'<br/>(0.0019 seconds)</td>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan'<br/>(0.0019 seconds)</td>
     <td>呃，show off失败，似乎没有什么改变（祈祷）。</td>
   </tr>
-  <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (1.7565s)</td>
+  <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee'<br/>(1.7565s)</td>
     <td>
-SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.0006s)
+SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee'<br/>(0.0006s)
 </td><td>看到了吧？速度明显提升了。</td></tr>
-  <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' and phone_number='4568061964' (6.3696s)</td>
-    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' and phone_number='4568061964' (0.0011s)</td>
+  <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' and phone_number='4568061964'<br/>(6.3696s)</td>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' and phone_number='4568061964'<br/>(0.0011s)</td>
     <td>看到了吧！！速度大幅度提升了！！</td></tr>
 </table>
 
