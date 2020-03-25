@@ -32,7 +32,11 @@
 
 <table>
   <tr><th>未加INDEX</th><th>已加INDEX</th><th>备注</th></tr>
-  <tr><td>`SELECT * FROM `phonebook` WHERE `surname` = 'tan' `</td><td>`SELECT * FROM `phonebook` WHERE `surname` = 'tan' `</td><td></td></tr>
+  <tr>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' (0.0019 seconds)</td>
+    <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' (0.0019 seconds)</td>
+    <td>呃，show off失败，似乎没有什么改变（祈祷）。</td>
+  </tr>
   <tr><td></td><td></td><td></td></tr>
   <tr><td></td><td></td><td></td></tr>
   
