@@ -37,7 +37,10 @@
     <td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' (0.0019 seconds)</td>
     <td>呃，show off失败，似乎没有什么改变（祈祷）。</td>
   </tr>
-  <tr><td></td><td></td><td></td></tr>
+  <tr><td>SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (1.7565 seconds)</td>
+    <td>
+SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.0006 seconds)
+</td><td>看到了吧？速度明显提升了。</td></tr>
   <tr><td></td><td></td><td></td></tr>
   
   
