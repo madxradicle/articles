@@ -144,7 +144,15 @@ $sql = "INSERT INTO `sometable` (some_type, some_id) SELECT 'add_product','{$get
 <p align="center">
     <img src="https://github.madxradicle.com/duplicate_insert/figure3.png"/><br/>
     图3. Structure of multi insert sql
-</p>    
+</p>
+
+配合UNION, 可以用一行SQL解决这问题。
+```sh
+INSERT INTO mg_member_transaction (mt_type, user_id, ref_table, ref_pkid, mt_wallet, mt_add, mt_deduct, mt_cdate)
+(SELECT 'transfer', '1', 'sometable', '1', 'cash', 0 , 12, '2020-03-06 12:00:00' FROM mg_member_transaction WHERE NOT EXISTS (SELECT 1 FROM `mg_member_transaction` where ref_table='sometable' and ref_pkid='1') LIMIT 1)
+UNION ALL 
+(SELECT 'transfer', '2', 'sometable', '2', 'cash', 12, 0, '2020-03-06 12:00:00' FROM mg_member_transaction WHERE NOT EXISTS (SELECT 1 FROM `mg_member_transaction` where ref_table='sometable' and ref_pkid='2') LIMIT 1)
+```
 
 ## 注意事项
 Unique是强大的，可是如果script是执行多个insert在不同的table,那么这些table通通都必须有unique的保护。举例错误示范。
