@@ -75,5 +75,11 @@ SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.00
 3) 仅仅扫描了104个记录。
 4) Using Index, 此order by用到index。
 
-##WHERE CLAUSE错误写法
+## WHERE CLAUSE错误写法
+如果添加Index的column包含依序a,b,c, 那么写WHERE CLAUSE的最佳的效果便是：
+
+WHERE a=? AND b=? AND c=? 或 ✅
+WHERE a=? AND b=? 或 ✅
+WHERE a=? ✅
+
 
