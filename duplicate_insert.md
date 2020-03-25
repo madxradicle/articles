@@ -22,7 +22,7 @@
 * [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
 
 <p align="center">
-![Image description](https://github.madxradicle.com/duplicate_insert/figure1.png)
+<img src="https://github.madxradicle.com/duplicate_insert/figure1.png"/>
 
 图1. Duplicate insert的结果
 </p>
