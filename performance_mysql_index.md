@@ -17,10 +17,6 @@
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
-* [System Lag](https://github.com/madxradicle/articles/tree/master/system_lag.md)
-* [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
-* [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
-
 * [简介](#简介)
 * [使用EXPLAIN](#使用EXPLAIN)
 * [WHERE CLAUSE错误写法](#WHERE-CLAUSE错误写法)
@@ -29,7 +25,6 @@
 * [其他](#其他)
 
 ## 简介
-
 <p align="center">
     <img src="https://github.madxradicle.com/mysql_index/figure1.png"/><br/>
     图1. 简单的phonebook table structure，我随机添加了10mil行记录。
