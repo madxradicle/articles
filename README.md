@@ -5,7 +5,7 @@
   </a>
   <h3 align="center">Technical Articles</h3>
   <p align="center">
-   These articles are initially written in chinese and moved from google documents.
+   These articles are initially written in chinese and they're moved from google documents.
     <br />
     <a href="https://github.com/madxradicle/articles"><strong>Explore the docs »</strong></a>
     <br />
@@ -17,6 +17,6 @@
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
+* [System Lag](https://github.com/madxradicle/articles/tree/master/system_lag.md)
 * [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
-* [Framework](#framework)
-* [Contributing](#contributing)
+* [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
