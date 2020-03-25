@@ -16,6 +16,11 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
+## Menu
+* [System Lag](https://github.com/madxradicle/articles/tree/master/system_lag.md)
+* [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
+* [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
+
 ## Table of Contents
 * [简介](#简介)
 * [使用EXPLAIN](#使用EXPLAIN)
