@@ -29,9 +29,9 @@
 
 * [原因](#原因)
 * [解决方法1 - 单一process处理事务](#解决方法1-单一process处理事务)
-* [解决方法2 - 使用explicit lock at table-level](#解决方法2-使用explicit lock at table-level)
-* [解决方法3 - 使用INSERT NOT EXIST](#解决方法3-使用INSERT NOT EXIST)
-* [如何避免duplicate of multi insert?](#如何避免duplicate of multi insert?)
+* [解决方法2 - 使用explicit lock at table-level](#解决方法2-使用explicit-lock-at-table-level)
+* [解决方法3 - 使用INSERT NOT EXIST](#解决方法3-使用INSERT-NOT-EXIST)
+* [如何避免duplicate of multi insert?](#如何避免duplicate-of-multi-insert?)
 * [注意事项](#注意事项)
 
 
