@@ -139,13 +139,14 @@ ASC (ascending) 是natural order, 不需要额外工作所以最快，一旦用�
 ## 其他
 本文所提到的都是index最佳的使用方法。所以以下的commands都必须避免。
 
+```SH
 - OR ❌
 - >=, <=, >, <❌
 - NOT IN❌
 - BETWEEN❌
 - LIKE❌
 - !=❌
-
+```
 Index是针对select sql而设的,需知大部分的系统都是以select占大多数的。
 
 更多内容，可以从这里学习 https://www.slideshare.net/billkarwin/how-to-design-indexes-really
