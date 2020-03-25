@@ -108,5 +108,25 @@ $r = $o_db->query("SELECT * FROM mg_prevent_duplicate LIMIT 1");
 缺点:
 1) 由于是background/asynchronous process,用户无法即时体验request结果。补救方法是使用websocket将request结果直接打在客户端。
 
+## 解决方法2 使用explicit lock at table level
+```sh
+PHP伪代码
+<?php
+
+//only session hold write table lock can read and write at this table
+//other session cannot read and write until write table lock is released
+$o_db->query("LOCK TABLE tableA,tableB,tableC WRITE");
+
+$o_db->query("SELECT tableAcolumn FROM tableA WHERE user_id=123");
+
+$o_db->query("INSERT INTO tableB SET tableBcolumn='programmer');
+
+$o_db->query("INSERT INTO tableC SET tableCcolumn='soonyu');
+
+$o_db->query("UNLOCK TABLES");
+```
+优点: 可以即时处理事务然后将结果打印给用户
+缺点: 抢锁的过程将造成系统负担大，高并发时，这种设计系统容易被KO。不建议使用。
+
 
 
