@@ -147,6 +147,7 @@ SELECT b,c ✅
 SELECT a,c ✅
 SELECT b ✅
 SELECT c ✅
+
 SELECT * ❌
 ```
 
