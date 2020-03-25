@@ -100,4 +100,54 @@ SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.00
 - ORDER BY b ASC ❌
 - ORDER BY c ASC ❌
 
+`IF WHERE a=? THEN`
+- ORDER BY a ASC, b ASC, c ASC ✅
+- ORDER BY a ASC, b ASC ✅
+- ORDER BY a ASC✅
+- ORDER BY b ASC ✅
+- ORDER BY b ASC, c ASC ✅
+- ORDER BY c ASC ❌
+- ORDER BY a ASC, c ASC ❌
+
+`IF WHERE a=? AND b=? THEN`
+- ORDER BY a ASC, b ASC, c ASC ✅
+- ORDER BY a ASC, b ASC ✅
+- ORDER BY a ASC✅
+- ORDER BY b ASC ✅
+- ORDER BY c ASC✅
+- ORDER BY a ASC, c ASC✅ 
+- ORDER BY b ASC, c ASC ✅
+
+ASC (ascending) 是natural order, 不需要额外工作所以最快，一旦用到DESC,不管column有没有被Index,explain里都会显示using filesort, 这时mysql需要额外开销。
+
+是不是说永远都用不到DESC? 其实只要用WHERE 缩小search range，还是可以用到DESC的。所以programmer必须一直用explain检查并调到最佳水平。
+
+## SELECT 最好写法
+如果添加Index的column包含依序a,b,c, 那么写SELECT的最佳的效果便是：
+
+- SELECT a,b,c ✅
+- SELECT a,b ✅
+- SELECT a  ✅
+- SELECT b,c ✅
+- SELECT a,c ✅
+- SELECT b ✅
+- SELECT c ✅
+- SELECT * ❌
+
+当你使用index(a_b_c) 找到record时,直接取出indexed columns: a,b,c就变得轻易许多。如果select 的column不在index里，那么mysql需要额外开销到table file再取出column value.
+
+## 其他
+本文所提到的都是index最佳的使用方法。所以以下的commands都必须避免。
+
+- OR ❌
+- >=, <=, >, <❌
+- NOT IN❌
+- BETWEEN❌
+- LIKE❌
+- !=❌
+
+Index是针对select sql而设的,需知大部分的系统都是以select占大多数的。
+
+更多内容，可以从这里学习 https://www.slideshare.net/billkarwin/how-to-design-indexes-really
+
 
