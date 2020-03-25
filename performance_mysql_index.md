@@ -32,7 +32,7 @@
 
 <table>
   <tr><th>未加INDEX</th><th>已加INDEX</th><th>备注</th></tr>
-  <tr><td></td><td></td><td></td></tr>
+  <tr><td>`SELECT * FROM `phonebook` WHERE `surname` = 'tan' `</td><td>`SELECT * FROM `phonebook` WHERE `surname` = 'tan' `</td><td></td></tr>
   <tr><td></td><td></td><td></td></tr>
   <tr><td></td><td></td><td></td></tr>
   
