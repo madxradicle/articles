@@ -81,4 +81,9 @@ SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.00
 - WHERE a=? AND b=? 或 ✅
 - WHERE a=? ✅
 
+请避免以下写法：
+- WHERE a=? AND c=? 或 ❌
+- WHERE b=? AND c=? 或 ❌
+- WHERE b=? 或 ❌
+- WHERE c=? ❌
 
