@@ -1,7 +1,7 @@
 # Technical Articles
 <p align="center">
   <a href="https://github.com/madxradicle/madxframework2.0">
-    <img src="https://www.randomsystem.net/media/images/github/MR_logo.png" alt="Logo" width="200px" height="100px">
+    <img src="https://github.madxradicle.com/MR_logo.png" alt="Logo" width="200px" height="100px">
   </a>
   <h3 align="center">Technical Articles</h3>
   <p align="center">
