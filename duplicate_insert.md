@@ -21,11 +21,12 @@
 * [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
 * [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
 
+上文SYSTEM_LAG提到duplicate inserts。明明你的php script只是执行一次insert, 结果table里却多过一条records, records的datetime column显示同一秒，也有多几秒可是少见。这造成公司蒙受严重损失。
+
 <p align="center">
     <img src="https://github.madxradicle.com/duplicate_insert/figure1.png"/><br/>
    图1. Duplicate insert的结果
 </p>    
-上文SYSTEM_LAG提到duplicate inserts。明明你的php script只是执行一次insert, 结果table里却多过一条records, records的datetime column显示同一秒，也有多几秒可是少见。这造成公司蒙受严重损失。
 
 * [原因](#原因)
 * [解决方法1 - 单一process处理事务](#解决方法1-单一process处理事务)
