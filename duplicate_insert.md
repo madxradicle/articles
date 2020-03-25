@@ -16,18 +16,12 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+## Menu
 * [System Lag](https://github.com/madxradicle/articles/tree/master/system_lag.md)
 * [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
 * [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
 
-上文SYSTEM_LAG提到duplicate inserts。明明你的php script只是执行一次insert, 结果table里却多过一条records, records的datetime column显示同一秒，也有多几秒可是少见。这造成公司蒙受严重损失。
-
-<p align="center">
-    <img src="https://github.madxradicle.com/duplicate_insert/figure1.png"/><br/>
-   图1. Duplicate insert的结果
-</p>    
-
+## Table of Contents
 * [原因](#原因)
 * [解决方法1 - 单一process处理事务](#解决方法1-单一process处理事务)
 * [解决方法2 - 使用explicit lock at table-level](#解决方法2-使用explicit-lock-at-table-level)
@@ -36,6 +30,13 @@
 * [注意事项](#注意事项)
 
 ## 原因
+上文SYSTEM_LAG提到duplicate inserts。明明你的php script只是执行一次insert, 结果table里却多过一条records, records的datetime column显示同一秒，也有多几秒可是少见。这造成公司蒙受严重损失。
+
+<p align="center">
+    <img src="https://github.madxradicle.com/duplicate_insert/figure1.png"/><br/>
+   图1. Duplicate insert的结果
+</p>   
+
 不明，网上也是各有各说，那好我们整理出整条流程, browser -> cdn proxy (cloudflare) -> web server -> php -> mysql. 我们看到这5个方面皆有可能是肇事者。但最大可能性还是mysql本身。
 
 我曾经使用apache benchmark 做stress test, 将concurrent connection 调成1000然后并发到我写好的php script，蓄意弄lag system 可惜无法还原同样情况。
