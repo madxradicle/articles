@@ -87,3 +87,13 @@ SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.00
 - WHERE b=? 或 ❌
 - WHERE c=? ❌
 
+## ORDER BY较差写法 
+这里判断较差在于EXPLAIN的EXTRA出现了filesort,简单来说filesort代表index用不到。除此之外，前提还要 SELECT a,b,c或SELECT a,b 或 SELECT a ,不可使用SELECT *
+
+IF WHERE clause is empty THEN
+- ORDER BY a ASC, b ASC, c ASC ✅
+- ORDER BY a ASC, b ASC✅
+- ORDER BY a ASC✅
+
+
+
