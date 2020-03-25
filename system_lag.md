@@ -21,13 +21,13 @@
 * [Duplicate Insert](https://github.com/madxradicle/articles/tree/master/duplicate_insert.md)
 * [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
 
-通常系统异常变慢，可以说90%都是SQL的问题。这里概括 
-
 ## Table of Contents
 * [如何检查](#如何检查)
 * [解决方法](#解决方法)
 * [原理](#原理)
 * [并发症](#并发症)
+
+通常系统异常变慢，可以说90%都是SQL的问题。这里概括 
 
 ## 如何检查
 - 检查mysql process
