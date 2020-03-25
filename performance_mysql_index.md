@@ -29,3 +29,13 @@
     <img src="https://github.madxradicle.com/mysql_index/figure1.png"/><br/>
     图1. 简单的phonebook table structure，我随机添加了10mil行记录。
 </p>    
+
+<table>
+  <tr><th>未加INDEX</th><th>已加INDEX</th><th>备注</th></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td></tr>
+  
+  
+  
+</table>
