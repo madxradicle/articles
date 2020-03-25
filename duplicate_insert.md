@@ -128,5 +128,30 @@ $o_db->query("UNLOCK TABLES");
 优点: 可以即时处理事务然后将结果打印给用户
 缺点: 抢锁的过程将造成系统负担大，高并发时，这种设计系统容易被KO。不建议使用。
 
+## 解决方法#3 使用INSERT NOT EXIST
+如果不做Unique column,使用这种sql也可以解决duplicate insert.
+```sh
+$sql = "INSERT INTO `sometable` (some_type, some_id) SELECT 'add_product','{$get_d['id']}', FROM `sometable` WHERE NOT EXISTS (SELECT 1 FROM `sometable` where some_type='add_product' and some_id='{$get_d['id']}') LIMIT 1";
+```
+使用这种sql的前提是必须在sometable里出现一条dummy record。
 
+优点: 可以即时处理事务然后将结果打印给用户。这种方法也比explicit lock好。
+缺点: insert sql的可读性差，一个insert需要两次select的开销。
 
+## 如何避免duplicate of multi insert?
+
+## 注意事项
+Unique是强大的，可是如果script是执行多个insert在不同的table,那么这些table通通都必须有unique的保护。举例错误示范。
+
+PHP伪代码
+```sh
+<?php
+//tableBcolumn is unique
+$r = $o_db->query("INSERT INTO tableB SET tableBcolumn='programmer');
+
+If ($o_db->affected_rows($r) > 0) {
+    //tableCcolumn is not unique
+    $o_db->query("INSERT INTO tableC SET tableCcolumn='soonyu');
+}
+```
+这种情况当系统繁忙时，tableC还是会有几率发生duplicate inserts的! 
