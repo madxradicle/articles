@@ -22,9 +22,10 @@
 * [Performance - MYSQL Index](https://github.com/madxradicle/articles/tree/master/performance_mysql_index.md)
 
 <p align="center">
-<img src="https://github.madxradicle.com/duplicate_insert/figure1.png"/>
-
-图1. Duplicate insert的结果
+    <img src="https://github.madxradicle.com/duplicate_insert/figure1.png"/>
+</p>    
+<p align="center">
+    图1. Duplicate insert的结果
 </p>
 上文SYSTEM_LAG提到duplicate inserts。明明你的php script只是执行一次insert, 结果table里却多过一条records, records的datetime column显示同一秒，也有多几秒可是少见。这造成公司蒙受严重损失。
 
