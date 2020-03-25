@@ -52,3 +52,28 @@ SELECT * FROM `phonebook` WHERE `surname` = 'tan' and given_name='wen wee' (0.00
     图2. 用phpmyadmin新建一个combination index。别为各个column加index,没效果。
 </p>    
 
+## 使用EXPLAIN
+较差的SQL设计，EXPLAIN里会看到。
+<p align="center">
+    <img src="https://github.madxradicle.com/mysql_index/figure3.png"/><br/>
+    图3. 用phpmyadmin query explain
+</p>    
+
+1) type：ALL， 扫描整个table。
+2) key: NULL, 没有用到index。
+3) 估计扫描记录 9398158,占了超过总记录的90%。
+4) Using filesort,此order by没有用到index。
+
+较好的SQL设计，EXPLAIN里会看到。
+<p align="center">
+    <img src="https://github.madxradicle.com/mysql_index/figure4.png"/><br/>
+    图4. 用phpmyadmin query explain
+</p> 
+
+1) type: ref, 此sql使用到index。
+2) key: surname_givenname_phoneno，使用到这index。
+3) 仅仅扫描了104个记录。
+4) Using Index, 此order by用到index。
+
+##WHERE CLAUSE错误写法
+
