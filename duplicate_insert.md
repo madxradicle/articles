@@ -126,6 +126,7 @@ $o_db->query("INSERT INTO tableC SET tableCcolumn='soonyu');
 $o_db->query("UNLOCK TABLES");
 ```
 优点: 可以即时处理事务然后将结果打印给用户
+
 缺点: 抢锁的过程将造成系统负担大，高并发时，这种设计系统容易被KO。不建议使用。
 
 ## 解决方法#3 使用INSERT NOT EXIST
@@ -136,6 +137,7 @@ $sql = "INSERT INTO `sometable` (some_type, some_id) SELECT 'add_product','{$get
 使用这种sql的前提是必须在sometable里出现一条dummy record。
 
 优点: 可以即时处理事务然后将结果打印给用户。这种方法也比explicit lock好。
+
 缺点: insert sql的可读性差，一个insert需要两次select的开销。
 
 ## 如何避免duplicate of multi insert?
